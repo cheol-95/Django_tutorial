@@ -19,9 +19,6 @@ from addresses import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('pybo/', views.index),
     path('pybo/', include('pybo.urls')),
-    path('addresses/', views.address_list),
-    path('addresses/<int:pk>/', views.address),
-    path('login/', views.login)
+    path('addresses/', include('addresses.urls'))
 ]
